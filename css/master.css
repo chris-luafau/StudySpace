@@ -40,7 +40,40 @@ main a {
   margin-top: 2em;
 }
 
-.container2>a {
+main .space-btn {
+  display: inline-block;
+  background: #40e080;
+  background: rgba(0,0,0,0);
+  border-radius: 80%;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  color: white;
+  margin-top: 2em;
+}
+
+main .home-btn {
+  display: inline-block;
+  background: #40e080;
+  background: rgba(0,0,0,0);
+  border-radius: 80%;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  color: white;
+  margin-top: 2em;
+}
+
+.btn-primary {
+    background-color: #40e080;
+    border-color: #40e080;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
+    background-color: #40e080;
+    border-color: #40e080;
+}
+
+.container2 > a {
   display: inline-block;
   background: #40e080;
   text-align: center;
@@ -66,8 +99,12 @@ main a {
 .sub-btn {
   display: flex;
   background: #40e080;
+  background: rgba(0,0,0,0);
+  color: white;
+  border-radius: 80%;
   margin-left: 10px;
-  height: 30px;
+  height: 80px;
+  width: 80px;
 }
 
 .container-timer-btns {
@@ -77,6 +114,8 @@ main a {
 
 .back-btn {
   align-self: flex-start;
+  background: #40e080;
+  background: rgba(0,0,0,0);
 }
 
 .volume-icon {
@@ -100,6 +139,13 @@ main a {
   justify-content: space-around;
 }
 
+.alternatives {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .space {
   display: flex;
 }
@@ -112,10 +158,41 @@ main a {
 .slide {
   margin-left: 10px;
   margin-bottom: 10px;
+  width: 300px;
+}
+
+.slider {
+  margin-top: 30px;
+}
+
+.slider-vals {
+  width: 32px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 15px;
+  background: #343a40;
+  background: rgba(0,0,0,0);
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.backstretch img {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 .header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.left-head {
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+.dynamic-content {
+  display: none;
 }

@@ -9,37 +9,102 @@
   <link rel="stylesheet" href="/css/master.css">
 </head>
 
-<body class="transition-left p-3 mb-2 bg-dark text-white">
+<body class="p-3 mb-2 bg-dark text-white">
   <div class="container">
     <header class="page-header">
       <div class="container">
         <h4 class="sub-header">
           <div class="header-container transition-left">
-            <div class="left-head">Current StudySpace:</div>
-            <div class="center-head">Study<tag style="color:#40e080">Space</tag></div>
-            <button class="right-head btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              04:32:18
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Add time.</a>
+            <form data-swup-form="form" action="index.html">
+              <input class="btn btn-primary back-btn" type="submit" value="Home">
+            </form>
+            <div class="left-head" id="left-head">
+              <div class="curr-ss"></div>
             </div>
+            <div class="center-head">Study<tag style="color:#40e080">Space</tag>
+            </div>
+            <div id="timer">
+              <div class="values"></div>
+            </div>
+            <div><img class="volume-icon" src="https://imgplaceholder.com/35x35/transparent/40e080/glyphicon-volume-up" alt=""></div>
+            <!--
+              <div class="form-group">
+                <select class="form-control" name="time">
+                  <option value="">02:32:18</option>
+                  <option value="">Add Time</option>
+                </select>
+              </div>
+            -->
+            <!--
+              <button class="right-head btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                04:32:18
+              </button>
+
+              <div class="dropdown-menu col-xs-8" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/index.html">Add time.</a>
+              </div>-->
           </div>
         </h4>
       </div>
     </header>
-    <main id="swup" class="transition-left">
-      <img src="https://picsum.photos/1200/700" alt="Temp photo.">
+    <!--<main id="swup" class="transition-left">-->
+    <!--  <img src="https://picsum.photos/1200/700" alt="Temp photo.">-->
+    <!--<iframe src="https://giphy.com/embed/l1J9BYe5eZccC4Nck" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
+    <!--<iframe src="/assets/loops/coast.gif" width="1300" height="500" frameBorder="0" allowFullScreen></iframe>-->
+    <!--<div>
+        <video id="vid" width="1100" autoplay loop>
+          <source src="/assets/Beach.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>-->
+    <!--
       <div class="container2">
-        <a href="/index.html" class="transition-left back-btn">Back</a>
+        <form data-swup-form="form" action="index.html">
+          <input class="btn btn-primary transition-left back-btn" type="submit" value="Home">
+        </form>
         <img class="volume-icon" src="https://imgplaceholder.com/50x50/transparent/4ccadb/glyphicon-volume-up" alt="">
       </div>
-    </main>
-    <!--<div class="transition-wipe overlay"></div>-->
+    -->
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/danielgindi-jquery-backstretch/2.1.15/jquery.backstretch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var time = parseInt(getParameterByName("time"));
+    var timer = new Timer();
+    timer.start({
+      countdown: true,
+      startValues: {
+        minutes: time
+      }
+    });
+    $('#timer .values').html(timer.getTimeValues().toString());
+    timer.addEventListener('secondsUpdated', function(e) {
+      $('#timer .values').html(timer.getTimeValues().toString());
+    });
+    timer.addEventListener('targetAchieved', function(e) {
+      $('#timer .values').html('Complete');
+    });
+  </script>
+  <script>
+    var space = getParameterByName("space");
+    var alt = getParameterByName("alt");
 
+    $('#left-head .curr-ss').html(space + " | " + alt);
+  </script>
+  <script type="text/javascript">
+    var images = [{
+      url: 'assets/Beach.mp4',
+      isVideo: true,
+      loop: true
+    }];
+    $.backstretch(images, {
+      fade: 300
+    });
+  </script>
 </body>
 
 </html>

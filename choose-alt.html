@@ -19,18 +19,131 @@
       </div>
     </header>
     <main id="swup" class="transition-left">
-      <h4 class="sub-header">Choose <tag style="color:#40e080;">alternative</tag>.</h4>
-      <div class="study-spaces">
-        <a href="/set-timer.html" class="transition-left">Alternative 1</a>
-        <a href="/set-timer.html" class="transition-left">Alternative 2</a>
-        <a href="/index.html" class="transition-left">Back</a>
+      <h4 class="sub-header">
+        Choose <tag style="color:#40e080;">alternative</tag>.
+      </h4>
+
+      <div class="dynamic-content" id="beach-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Low-tide" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="High-tide" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="city-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Day" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Night" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="forest-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Creek" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Waterfall" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="library-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="FirstFloor" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="ThirdFloor" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="cafe-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Paris" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="NewYork" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="park-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="HighNoon" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Sunset" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="mountains-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="LowAltitude" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="HighAltitude" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="rain-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Light" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Heavy" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="dynamic-content" id="garden-alt">
+        <div class="alternatives">
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Oriental" name="alt">
+          </form>
+          <form data-swup-form="form" action="set-timer.html">
+            <input class="btn btn-primary space-btn" type="submit" value="Floral" name="alt">
+          </form>
+        </div>
+      </div>
+
+      <div class="container-timer-btns">
+        <form data-swup-form="form" action="index.html" id="home">
+          <input class="btn btn-primary home-btn" type="submit" value="Home" onclick="removeParams()">
+        </form>
       </div>
     </main>
-    <!--<div class="transition-wipe overlay"></div>-->
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+<!--  <script type="text/javascript">
+    //  var btnVal = document.querySelector('input[name=alt]').value // alt value
+    //  var space = getParameterByName('space'); // space value
+
+    $("form").submit(function() {
+      var input = $("<input>")
+        .attr("name", "space").val("Beach");
+      $(this).append(input);
+    });
+  </script>-->
 </body>
 
 </html>
