@@ -20,7 +20,7 @@
     </header>
     <main id="swup" class="transition-left main-container">
       <div class="header-container">
-        <h4 class="sub-header">Choose your <tag style="color:#40e080;">space</tag>.</h4>
+        <h4 class="sub-header" style="font-size:24px;">Choose your <tag style="color:#40e080;">space</tag></h4>
       </div>
       <div class="study-spaces">
         <form data-swup-form="form" action="choose-alt.html" data-ajax="false">
@@ -47,9 +47,13 @@
         <form data-swup-form="form" action="choose-alt.html">
           <input class="btn btn-primary space-btn" type="submit" value="Rain" name="space" autocomplete="off">
         </form>
+        <!--
         <form data-swup-form="form" action="choose-alt.html">
           <input class="btn btn-primary space-btn" type="submit" value="Garden" name="space" autocomplete="off">
         </form>
+      -->
+        <a id="randomBtn" class="btn btn-primary space-btn" href="#" style="padding-top:83px;">?</a>
+
       </div>
     </main>
   </div>
@@ -62,24 +66,59 @@
   <script src="/js/main.js"></script>
   <script type="text/javascript">
     $.backstretch([
-      "assets/forest.jpg",
-      "assets/city-skyline-at-night.jpg",
-      "assets/NatGeo07.jpg",
-      "assets/big-ben-bridge.jpg",
-      "assets/NatGeo03.jpg",
-      "assets/NatGeo12.jpg",
-      "assets/NatGeo15.jpg"
+      "assets/img/forest.jpg",
+      "assets/img/city-skyline-at-night.jpg",
+      "assets/img/NatGeo07.jpg",
+      "assets/img/big-ben-bridge.jpg",
+      "assets/img/NatGeo03.jpg",
+      "assets/img/NatGeo12.jpg",
+      "assets/img/NatGeo15.jpg"
     ], { duration: 3000, fade: 900} );
     $('.backstretch').css("opacity", 0.8);
   </script>
   <script>
-    const swup = new Swup();
+  let option = { animateHistoryBrowsing: true};
+    const swup = new Swup(option);
   </script>
   <script type="text/javascript">
-    function updateTextInput(val) {
-      document.getElementById('textInput').value = val;
+    $('#randomBtn').click(function() {
+      document.getElementById('randomBtn').setAttribute("href",randomStudySpace());
+    })
+    function updateStudyTime(val) {
+      if (val < 60) {
+      document.getElementById('textInput').value = val.toString() + " min";
     }
+      else {
+        var hours = Math.floor(val / 60);
+        var minutes = val % 60;
+        document.getElementById('textInput').value = hours.toString() + " hr " + minutes.toString() + " min";
+      }
+    }
+    function updateBreakTime(val) {
+      if (val < 60) {
+        if (val == 0) {
+          document.getElementById('every').innerHTML = 'No breaks.';
+          document.getElementById('breakInput').value = '';
+          document.getElementById('time-type').innerHTML = '';
+        }
+        else {
+          document.getElementById('every').innerHTML = 'Every';
+          document.getElementById('breakInput').value = val.toString();
+          document.getElementById('time-type').innerHTML = 'min.';
+        }
+    }
+      else {
+        var hours = Math.floor(val / 60);
+        //var minutes = val % 60;
+        document.getElementById('every').innerHTML = 'Every hour.';
+        document.getElementById('breakInput').value = '';
+        document.getElementById('time-type').innerHTML = '';
+      }
+    }
+
+
   </script>
+
 </body>
 
 </html>

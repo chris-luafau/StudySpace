@@ -10,7 +10,7 @@
 </head>
 
 <body class="p-3 mb-2 bg-dark text-white">
-  <div class="container">
+  <div class="container" style="background-color:rgba(0,0,0,.3);margin:0,0,0,0;padding-top:6px;padding-bottom:1px;">
     <header class="page-header">
       <div class="container">
         <h4 class="sub-header">
@@ -19,61 +19,97 @@
               <input class="btn btn-primary back-btn" type="submit" value="Home">
             </form>
             <div class="left-head" id="left-head">
-              <div class="curr-ss"></div>
+              <div class="curr-ss" style="margin-top:5px;"></div>
             </div>
-            <div class="center-head">Study<tag style="color:#40e080">Space</tag>
+            <div class="center-head" style="margin-top:5px;mix-blend-mode:difference;">
+              <a href="index.html" style="color:inherit;text-decoration:none;">Study<tag style="color:#40e080">Space</tag></a>
             </div>
             <div id="timer">
-              <div class="values"></div>
+              <div class="values" style="margin-top:5px;"></div>
             </div>
-            <div><img class="volume-icon" src="https://imgplaceholder.com/35x35/transparent/40e080/glyphicon-volume-up" alt=""></div>
-            <!--
-              <div class="form-group">
-                <select class="form-control" name="time">
-                  <option value="">02:32:18</option>
-                  <option value="">Add Time</option>
-                </select>
-              </div>
-            -->
-            <!--
-              <button class="right-head btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                04:32:18
-              </button>
-
-              <div class="dropdown-menu col-xs-8" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/index.html">Add time.</a>
-              </div>-->
+            <div>
+              <button class="btn btn-primary back-btn" type="button" data-toggle="modal" data-target="#modalAddTime">Add Time</button>
+            </div>
+            <div>
+              <button class="btn btn-primary back-btn" onclick="showVolume()"><img class="volume-icon" src="https://imgplaceholder.com/25x25/transparent/ffffff/glyphicon-volume-up" alt=""
+                  style="margin-top:-10px;margin-bottom:-5px;margin-left:3px;"></button>
+              <audio id="audio" loop="loop"></audio>
+            </div>
           </div>
         </h4>
       </div>
     </header>
-    <!--<main id="swup" class="transition-left">-->
-    <!--  <img src="https://picsum.photos/1200/700" alt="Temp photo.">-->
-    <!--<iframe src="https://giphy.com/embed/l1J9BYe5eZccC4Nck" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
-    <!--<iframe src="/assets/loops/coast.gif" width="1300" height="500" frameBorder="0" allowFullScreen></iframe>-->
-    <!--<div>
-        <video id="vid" width="1100" autoplay loop>
-          <source src="/assets/Beach.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>-->
-    <!--
-      <div class="container2">
-        <form data-swup-form="form" action="index.html">
-          <input class="btn btn-primary transition-left back-btn" type="submit" value="Home">
-        </form>
-        <img class="volume-icon" src="https://imgplaceholder.com/50x50/transparent/4ccadb/glyphicon-volume-up" alt="">
+  </div>
+  <div class="container" id="volume-slider" style="display:none;">
+    <div style="margin-right:27px;width:30px;background-color:rgba(0,0,0,.5);">
+    <input id="volume" class="slide" type="range" name="time" value="50" min="0" max="100" step="1" orient="vertical" style="-webkit-appearance: slider-vertical;margin-top:.5em;width:.7em;" onchange="updateVolume(this.value);">
+  </div>
+  </div>
+  <div class="modal fade" id="modalAddTime" tabindex="-1" role="dialog" aria-labelledby="modalAddTimeTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content" style="background:#40e080;background: rgba(0,0,0,0);border-color:#40e080;">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color:white;width:600px;text-align:center;">Add Time</h5>
+        </div>
+        <div class="modal-body" style="display:flex;justify-content:center;">
+          <input type="text" id="hours" style="width:50px;margin-right:5px;" value="0"> hr
+          <input type="text" id="minutes" style="width:50px;margin-left:10px;margin-right:5px;" value="0"> min
+        </div>
+        <div class="modal-footer" style="display:flex;justify-content:center;">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary colorButton" id="addTime" style="margin-left:10px;" data-dismiss="modal" onclick="addTime(document.getElementById('hours').value,document.getElementById('minutes').value)">Save changes</button>
+        </div>
       </div>
-    -->
+    </div>
+  </div>
+  <div class="modal fade" id="modalComplete" tabindex="-1" role="dialog" aria-labelledby="modalCompletedTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content" style="background:#40e080;background: rgba(0,0,0,0);border-color: #40e080;">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color:white;width:600px;text-align:center;">Done</h5>
+        </div>
+        <div class="modal-body" style="display:flex;justify-content:space-around;">
+          <form data-swup-form="form" action="index.html">
+            <input class="btn btn-secondary" type="submit" value="Home" name="space" autocomplete="off">
+          </form>
+          <button type="button" class="btn btn-primary colorButton" id="addTime" data-dismiss="modal" data-toggle="modal" data-target="#modalAddTime">Add time</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalBreakTime" tabindex="-1" role="dialog" aria-labelledby="modalBreakTimeTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content" style="background:#40e080;background: rgba(0,0,0,0);border-color: #40e080;">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color:white;width:600px;text-align:center;">Break time.</h5>
+        </div>
+        <div class="modal-body" style="display:flex;justify-content:space-around;">
+          <form data-swup-form="form" action="index.html">
+            <input class="btn btn-secondary" type="submit" value="Home" name="space" autocomplete="off">
+          </form>
+          <button type="button" class="btn btn-primary colorButton" id="breakTimeBtn" data-dismiss="modal" data-toggle="modal" data-target="#modalBreakTime" onclick="resume()">Resume</button>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/danielgindi-jquery-backstretch/2.1.15/jquery.backstretch.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+  <script src="js/require.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript">
+    $(".btn").mousedown(function(e) {
+      e.preventDefault();
+    })
+  </script>
   <script>
     var time = parseInt(getParameterByName("time"));
+    var break_time = parseInt(getParameterByName("break"));
+    var tmp_break_time = break_time;
+
     var timer = new Timer();
     timer.start({
       countdown: true,
@@ -81,30 +117,207 @@
         minutes: time
       }
     });
+
     $('#timer .values').html(timer.getTimeValues().toString());
     timer.addEventListener('secondsUpdated', function(e) {
       $('#timer .values').html(timer.getTimeValues().toString());
+      if (timer.getTimeValues().seconds == 0) {
+        if (tmp_break_time != 0) {
+          tmp_break_time -= 1;
+          console.log(tmp_break_time);
+          if (tmp_break_time == 0) {
+            $('#modalBreakTime').modal();
+            timer.pause();
+          }
+        }
+      }
     });
     timer.addEventListener('targetAchieved', function(e) {
-      $('#timer .values').html('Complete');
+      $('#modalComplete').modal();
     });
+
+    function resume() {
+      timer.start();
+      tmp_break_time = break_time;
+    }
+
+    function addTime(h, m) {
+      h = parseInt(h);
+      m = parseInt(m);
+      curr_time_hours = timer.getTimeValues().hours;
+      curr_time_min = timer.getTimeValues().minutes;
+      curr_time_sec = timer.getTimeValues().seconds;
+      timer.stop()
+      timer.start({
+        countdown: true,
+        startValues: {
+          hours: curr_time_hours + h,
+          minutes: curr_time_min + m,
+          seconds: curr_time_sec
+        }
+      });
+    }
   </script>
   <script>
     var space = getParameterByName("space");
     var alt = getParameterByName("alt");
-
     $('#left-head .curr-ss').html(space + " | " + alt);
   </script>
   <script type="text/javascript">
+    var url = '';
+    var audio = '#';
+    var space = getParameterByName("space");
+    var alt = getParameterByName("alt");
+    if (space == "Beach") {
+      if (alt == "Low-tide") {
+        url = 'assets/video/beach-low.mp4';
+        audio = 'assets/audio/beach-ambience.mp3';
+      } else {
+        url = 'assets/video/beach-high.mp4';
+        audio = 'assets/audio/beach-ambience.mp3';
+      }
+    } else if (space == "City") {
+      if (alt == "Day") {
+        url = 'assets/video/city-day.mp4';
+        audio = 'assets/audio/city-ambience.mp3';
+      } else {
+        url = 'assets/video/city-night.mp4';
+        audio = 'assets/audio/city-ambience.mp3';
+      }
+    } else if (space == "Forest") {
+      if (alt == "Creek") {
+        url = 'assets/video/forest-creek.mp4';
+        audio = 'assets/audio/forest-creek-ambience.mp3';
+      } else {
+        url = 'assets/video/forest-waterfall.mp4';
+        audio = 'assets/audio/forest-waterfall-ambience.mp3';
+      }
+    } else if (space == "Rain") {
+      if (alt == "Light") {
+        url = 'assets/video/rain-light.mp4';
+        audio = 'assets/audio/rain-light.mp3';
+      } else {
+        url = 'assets/video/rain-heavy.mp4';
+        audio = 'assets/audio/rain-heavy.mp3';
+      }
+    } else if (space == "Library") {
+      if (alt == "FirstFloor") {
+        url = 'assets/video/library-1st-floor.mp4';
+        audio = 'assets/audio/library-1st-floor.mp3';
+      } else {
+        url = 'assets/video/library-3rd-floor.mp4';
+        audio = 'assets/audio/library-3rd-floor.mp3';
+      }
+    } else if (space == "Cafe") {
+      if (alt == "Paris") {
+        url = 'assets/video/cafe-paris.mp4';
+        audio = 'assets/audio/cafe-paris.mp3';
+      } else {
+        url = 'assets/video/cafe-newyork.mp4';
+        audio = 'assets/audio/cafe-newyork.mp3';
+      }
+    } else if (space == "Park") {
+      if (alt == "Spring") {
+        url = 'assets/video/park-spring.mp4';
+        audio = 'assets/audio/park-spring.wav';
+      } else {
+        url = 'assets/video/park-fall.mp4';
+        audio = 'assets/audio/park-fall.wav';
+      }
+    } else if (space == "Mountains") {
+      if (alt == "LowAltitude") {
+        url = 'assets/video/mountain-low-alt.mp4';
+        audio = 'assets/audio/mountain-low-alt.mp3';
+      } else {
+        url = 'assets/video/mountain-high-alt.mp4';
+        audio = 'assets/audio/mountain-high-alt.wav';
+      }
+    }
+
+///////////////////////////////////////////////////////////////////////////////////
+// Fetch from jb.son
+/*
+    $.ajax({
+    type: 'GET',
+    url: 'http://localhost:3000/media',
+    success: function (data) {
+      console.log("success", data)
+      $.each(data, function (i, item) { 
+        console.log(item.userId);
+        if (item.style == space) {
+          if(item.alt-style == alt)
+          {
+            url = item.altvid;
+            audio = item.altaud;
+          }
+          url = item.vid;
+          audio = item.aud;
+        }
+      });
+    }
+  });
+*/
+///////////////////////////////////////////////////////////////////////////////////
+
     var images = [{
-      url: 'assets/Beach.mp4',
+      url: url,
       isVideo: true,
       loop: true
     }];
     $.backstretch(images, {
       fade: 300
     });
+
+    var audioElem = document.getElementById('audio');
+    audioElem.src = audio;
+    audioElem.volume = 0.5;
+    audioElem.play();
+
+    function showVolume() {
+      var x = document.getElementById("volume-slider");
+      if (x.style.display === "none") {
+        x.style.display = "flex";
+        x.style.justifyContent = "flex-end";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function updateVolume(val) {
+      var audioElem = document.getElementById('audio');
+      val = val / 100;
+      audioElem.volume = val;
+    }
   </script>
+  <!--
+  <script type="text/javascript">
+    require(['minio'], function(Minio) {
+      var minioClient = new Minio.Client({
+        endPoint: 'http://192.168.1.116:9000',
+        port: 9000,
+        useSSL: true,
+        accessKey: 'S3L42C3BV9SGH50ZVC12',
+        secretKey: '8Iih1fDenlNoaT8xrHM2+ufyCVl45PtQUj+Sclsh',
+        secure: false
+      });
+      var size = 0;
+      minioClient.getObject('studyspace', 'Beach.mp4', function(err, dataStream) {
+        if (err) {
+          return console.log(err);
+        }
+        dataStream.on('data', function(chunk) {
+          size += chunk.length;
+        });
+        dataStream.on('end', function() {
+          console.log('End. Total size = ' + size);
+        });
+        dataStream.on('error', function(err) {
+          console.log(err);
+        });
+      });
+    });
+
+  </script>-->
 </body>
 
 </html>

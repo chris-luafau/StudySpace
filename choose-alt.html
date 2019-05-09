@@ -19,8 +19,8 @@
       </div>
     </header>
     <main id="swup" class="transition-left">
-      <h4 class="sub-header">
-        Choose <tag style="color:#40e080;">alternative</tag>.
+      <h4 class="sub-header" style="font-size:24px;">
+        Choose <tag style="color:#40e080;">alternative</tag>
       </h4>
 
       <div class="dynamic-content" id="beach-alt">
@@ -81,10 +81,10 @@
       <div class="dynamic-content" id="park-alt">
         <div class="alternatives">
           <form data-swup-form="form" action="set-timer.html">
-            <input class="btn btn-primary space-btn" type="submit" value="HighNoon" name="alt">
+            <input class="btn btn-primary space-btn" type="submit" value="Spring" name="alt">
           </form>
           <form data-swup-form="form" action="set-timer.html">
-            <input class="btn btn-primary space-btn" type="submit" value="Sunset" name="alt">
+            <input class="btn btn-primary space-btn" type="submit" value="Fall" name="alt">
           </form>
         </div>
       </div>
@@ -121,11 +121,8 @@
           </form>
         </div>
       </div>
-
       <div class="container-timer-btns">
-        <form data-swup-form="form" action="index.html" id="home">
-          <input class="btn btn-primary home-btn" type="submit" value="Home" onclick="removeParams()">
-        </form>
+        <button class="btn btn-primary home-btn" type="button" onclick="history.back()" value="Back">Back
       </div>
     </main>
   </div>
@@ -134,16 +131,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="/js/main.js"></script>
-<!--  <script type="text/javascript">
-    //  var btnVal = document.querySelector('input[name=alt]').value // alt value
-    //  var space = getParameterByName('space'); // space value
-
-    $("form").submit(function() {
-      var input = $("<input>")
-        .attr("name", "space").val("Beach");
-      $(this).append(input);
-    });
-  </script>-->
 </body>
 
 </html>
