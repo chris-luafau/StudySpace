@@ -14,13 +14,13 @@
     <header class=" page-header">
       <div class="container">
         <h1 class="page-title">
-          <tag style="color:white;">Study</tag>Space
+          <tag class="w-tag">Study</tag>Space
         </h1>
       </div>
     </header>
     <main id="swup" class="transition-left main-container">
       <div class="header-container">
-        <h4 class="sub-header" style="font-size:24px;">Choose your <tag style="color:#40e080;">space</tag></h4>
+        <h4 class="sub-header">Choose your <tag class="g-tag">space</tag></h4>
       </div>
       <div class="study-spaces">
         <form data-swup-form="form" action="choose-alt.html" data-ajax="false">
@@ -47,13 +47,7 @@
         <form data-swup-form="form" action="choose-alt.html">
           <input class="btn btn-primary space-btn" type="submit" value="Rain" name="space" autocomplete="off">
         </form>
-        <!--
-        <form data-swup-form="form" action="choose-alt.html">
-          <input class="btn btn-primary space-btn" type="submit" value="Garden" name="space" autocomplete="off">
-        </form>
-      -->
         <a id="randomBtn" class="btn btn-primary space-btn" href="#" style="padding-top:83px;">?</a>
-
       </div>
     </main>
   </div>
@@ -64,60 +58,7 @@
   <script src="/js/swup.min.js"></script>
   <script src="/js/easytimer.min.js"></script>
   <script src="/js/main.js"></script>
-  <script type="text/javascript">
-    $.backstretch([
-      "assets/img/forest.jpg",
-      "assets/img/city-skyline-at-night.jpg",
-      "assets/img/NatGeo07.jpg",
-      "assets/img/big-ben-bridge.jpg",
-      "assets/img/NatGeo03.jpg",
-      "assets/img/NatGeo12.jpg",
-      "assets/img/NatGeo15.jpg"
-    ], { duration: 3000, fade: 900} );
-    $('.backstretch').css("opacity", 0.8);
-  </script>
-  <script>
-  let option = { animateHistoryBrowsing: true};
-    const swup = new Swup(option);
-  </script>
-  <script type="text/javascript">
-    $('#randomBtn').click(function() {
-      document.getElementById('randomBtn').setAttribute("href",randomStudySpace());
-    })
-    function updateStudyTime(val) {
-      if (val < 60) {
-      document.getElementById('textInput').value = val.toString() + " min";
-    }
-      else {
-        var hours = Math.floor(val / 60);
-        var minutes = val % 60;
-        document.getElementById('textInput').value = hours.toString() + " hr " + minutes.toString() + " min";
-      }
-    }
-    function updateBreakTime(val) {
-      if (val < 60) {
-        if (val == 0) {
-          document.getElementById('every').innerHTML = 'No breaks.';
-          document.getElementById('breakInput').value = '';
-          document.getElementById('time-type').innerHTML = '';
-        }
-        else {
-          document.getElementById('every').innerHTML = 'Every';
-          document.getElementById('breakInput').value = val.toString();
-          document.getElementById('time-type').innerHTML = 'min.';
-        }
-    }
-      else {
-        var hours = Math.floor(val / 60);
-        //var minutes = val % 60;
-        document.getElementById('every').innerHTML = 'Every hour.';
-        document.getElementById('breakInput').value = '';
-        document.getElementById('time-type').innerHTML = '';
-      }
-    }
-
-
-  </script>
+  <script src="js/index.js"> </script>
 
 </body>
 

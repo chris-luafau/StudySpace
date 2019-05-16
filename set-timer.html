@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="/css/master.css">
 </head>
 
-
 <body class="p-3 mb-2 bg-dark text-white">
   <div class="container">
     <header class="page-header">
@@ -20,39 +19,35 @@
 
     <main id="swup" class="transition-left">
       <form data-swup-form="form" id="slide-form" action="study-space.html" class="transition-left">
-        <h4 class="sub-header" style="font-size:24px;">How <tag style="color:#40e080">long</tag>?</h4>
-        <div style="display:flex;justify-content:center;">
-          <input type="text" id="textInput" value="2 hr 30 min" class="slider-vals" style="width:100px;font-size:20px;">
+        <h4 class="sub-header">How <tag class="g-tag">long</tag>?</h4>
+        <div class="timer-options">
+          <input type="text" id="textInput" value="2 hr. 30 min." class="slider-vals">
           <span style="margin-top:10px;"></span>
         </div>
         <div class="form-group transition-left slider">
-          <span style="margin-left:10px;margin-right:10px;margin-top:15px;font-size:18px;">30 min.</span>
-          <input id="studyTime" class="slide" type="range" name="time" value="150" min="1" max="300" step="1" style="margin-top:20px;" onchange="updateStudyTime(this.value);">
-          <span style="margin-left:20px;margin-right:10px;margin-top:15px;font-size:18px;">5 hr.</span>
+          <span class="span-left">30 min.</span>
+          <input id="studyTime" class="slide" type="range" name="time" value="150" min="30" max="300" step="30" style="margin-top:20px;" onchange="updateStudyTime(this.value);">
+          <span class="span-right">5 hr.</span>
         </div>
         <br><br>
-        <h4 class="sub-header" style="font-size:24px;">Break <tag style="color:#40e080">intervals</tag>?</h4>
-        <div style="display:flex;justify-content:center;">
-          <span id="every"style="font-size:20px;">Every </span><input type="text" id="breakInput" value="30" class="break-vals" style="font-size:20px;"><span id="time-type" style="font-size:20px;"> min.</span>
+        <h4 class="sub-header">Break <tag class="g-tag">intervals</tag>?</h4>
+        <div class="timer-options">
+          <input type="text" id="breakInput" value="Every 30 min." class="break-vals b-text">
         </div>
         <div class="form-group transition-left slider">
-          <span style="margin-left:10px;margin-right:10px;margin-top:15px;font-size:18px;">None.</span>
+          <span class="span-left">None.</span>
           <input id="breakTime" class="slide" type="range" name="break" value="30" min="0" max="60" step="5" style="margin-top:20px;" onchange="updateBreakTime(this.value);">
-          <span style="margin-left:20px;margin-right:10px;margin-top:15px;font-size:18px;">1 hr.</span>
+          <span class="span-right">1 hr.</span>
         </div>
         <br><br>
-        <div style="display:flex;justify-content:center">
+        <div class="timer-options">
         <button class="btn btn-primary back-btn" type="button" onclick="history.back()" value="Back">Back
-        <button type="submit" class="btn btn-primary sub-btn" style="font-size:20px;">Next</button>
+        <button type="submit" class="btn btn-primary sub-btn b-text">Next</button>
       </div>
-
       </form>
-
       <div class="container-timer-btns">
           <a class="btn btn-primary a-btn" href="index.html">Home</a>
       </div>
-
-
     </main>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

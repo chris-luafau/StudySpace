@@ -1,3 +1,4 @@
+
 .page-title {
   font-size: 60px;
   line-height: 1;
@@ -11,6 +12,53 @@
 .transition-fade {
   transition: .4s;
   opacity: 1;
+}
+
+.sub-header {
+  font-size: 24px !important;
+}
+
+.g-tag {
+  color: #40e080;
+}
+
+.w-tag {
+  color: white;
+}
+
+.timer-options {
+  display: flex;
+  justify-content: center;
+}
+
+.index-link {
+  color:inherit;
+  text-decoration:none;
+}
+
+.b-text {
+  font-size: 20px !important;
+}
+
+.add-ws {
+  margin-left: 5px;
+}
+
+.add-ts {
+  margin-left: 10px;
+}
+
+.v-div {
+  margin-right:27px;
+  width:30px;
+  background-color:rgba(0,0,0,.3);
+}
+
+.bg-header {
+  background-color:rgba(0,0,0,.3);
+  margin:0,0,0,0;
+  padding-top:6px;
+  padding-bottom:1px;
 }
 
 html.is-animating .transition-fade {
@@ -27,20 +75,6 @@ html.is-animating .transition-left {
   opacity: 0;
   transform: translateX(-100px);
 }
-
-/*
-main a {
-  display: inline-block;
-  background: #40e080;
-  border-radius: 80%;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-  color: white;
-  padding: 5em 0 0 0;
-  margin-top: 2em;
-}
-*/
 
 main .space-btn {
   display: inline-block;
@@ -92,7 +126,46 @@ main .back-btn {
   height: 100px;
   color: white;
   padding-top: 1.65em;
+}
 
+.vol-btn {
+  margin-bottom:-5px;
+  margin-left:3px;
+}
+
+.m-bod {
+  display:flex;
+  justify-content:center;
+}
+
+.m-break-bod {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.m-hours {
+  width: 35px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.m-mins {
+  width: 35px;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.modal-content {
+  background: #40e080 !important;
+  background: rgba(0,0,0,0) !important;
+  border-color: #40e080 !important;
+}
+
+.modal-title {
+  color:white !important;
+  width:600px !important;
+  text-align:center !important;
 }
 
 .btn-primary {
@@ -220,8 +293,10 @@ a:hover {
 }
 
 .slider-vals {
-  width: 32px;
+  width:120px;
   height: 40px;
+  font-size:20px;
+  text-align: center;
   margin-left: 10px;
   margin-top: 2px;
   background: #343a40;
@@ -230,9 +305,25 @@ a:hover {
   outline: none;
   border: none;
 }
+
+.span-left {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:15px;
+  font-size:18px;
+}
+
+.span-right {
+  margin-left:20px;
+  margin-right:10px;
+  margin-top:15px;
+  font-size:18px;
+}
+
 .break-vals {
-  width: 30px;
+  width: 140px;
   height: 30px;
+  text-align: center;
   margin-left: 7px;
   margin-right: -3px;
   background: #343a40;
@@ -253,7 +344,7 @@ a:hover {
 }
 
 .left-head {
-  font-size: 18px;
+  font-size: 23px;
   margin-top: 3px;
 }
 
