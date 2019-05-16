@@ -29,6 +29,7 @@ $(document).ready(function () {
     });
   }
 
+  // Continuously update the timer while also checking to see if we reached a break time.
   $('#timer .values').html(timer.getTimeValues().toString());
   timer.addEventListener('secondsUpdated', function (e) {
     $('#timer .values').html(timer.getTimeValues().toString());
@@ -57,11 +58,14 @@ $(document).ready(function () {
     }
   });
 
+  // When the timer reaches 0, show the Completed modal and pause the audio.
   timer.addEventListener('targetAchieved', function (e) {
     $('#modalComplete').modal();
     audioElem.pause();
   });
 
+
+  // Get the parameters from the URL to find out which Study Space we're in, which alternative we're using, and which audio and video we should use.
   var space = getParameterByName('space');
   var alt = getParameterByName('alt');
   $('#left-head .curr-ss').html(space + ' | ' + alt);
@@ -134,10 +138,13 @@ $(document).ready(function () {
     }
   }
 
+  // Play the audio
   audioElem.src = audio;
   audioElem.volume = 0.5;
   audioElem.play();
 
+
+  // Play the video
   var images = [{
     url: url,
     isVideo: true,
@@ -149,6 +156,7 @@ $(document).ready(function () {
   });
 });
 
+// Show the volume slider.
 function showVolume () {
   var x = document.getElementById('volume-slider');
   if (x.style.display === 'none') {
@@ -159,18 +167,21 @@ function showVolume () {
   }
 }
 
+// Update the volume
 function updateVolume (val) {
   var audioElem = document.getElementById('audio');
   val = val / 100;
   audioElem.volume = val;
 }
 
+// Start the timer again and resume the audio.
 function resume () {
   timer.start();
   audioElem.play();
   tmpBreakTime = breakTime;
 }
 
+// Add more time to the timer.
 function addTime (h, m) {
   h = parseInt(Math.ceil(h));
   m = parseInt(Math.ceil(m));

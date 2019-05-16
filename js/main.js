@@ -10,6 +10,8 @@ function getParameterByName (name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+
+// Show the correct alternatives based on which study space the user picked.
 function showContent () {
   var dynamicContent = getParameterByName('space');
 
@@ -36,10 +38,12 @@ function showContent () {
   }
 }
 
+// Show the content
 $(document).ready(function () {
   showContent();
 });
 
+// Append the alternative parameter to the URL so that the next page can use it.
 function appendParams () {
   $('form').submit(function () {
     var space = getParameterByName('space');
@@ -61,6 +65,7 @@ function appendParams () {
   });
 }
 
+// When the user clicks the Home button, it will remove the study space and alternative parameters from the URL.
 function removeParams () {
   $('#home').submit(function () {
     window.location.href = 'http://localhost:3000/index.html?';
@@ -78,6 +83,7 @@ function disableInput () {
   $('#inputText').prop('disabled', true);
 }
 
+// This function is needed for Swup. It will reload these functions when there is a transition to another page.
 function init () {
   /* eslint-disable no-new */
   /* eslint-disable new-cap */
@@ -87,5 +93,4 @@ function init () {
   new disableInput();
   new showContent();
 }
-
 document.addEventListener('swup:contentReplaced', init);

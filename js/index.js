@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
+// Function to generate a random study space when the user clicks the random button.
 function randomStudySpace () {
   var spaces = ['Beach', 'City', 'Forest', 'Library', 'Cafe', 'Park', 'Mountains', 'Rain'];
   var space = spaces[Math.floor(Math.random() * spaces.length)];
