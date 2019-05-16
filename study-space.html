@@ -10,6 +10,7 @@
 </head>
 
 <body class="p-3 mb-2 bg-dark text-white">
+  <!-- Display the header bar with the options. -->
   <div class="container bg-header">
     <header class="page-header">
       <div class="container">
@@ -39,11 +40,14 @@
       </div>
     </header>
   </div>
+  <!-- Volume slider -->
   <div class="container" id="volume-slider" style="display:none;">
     <div class="v-div">
     <input id="volume" class="slide" type="range" name="time" value="50" min="0" max="100" step="1" orient="vertical" style="-webkit-appearance: slider-vertical;margin-top:.5em;width:.7em;" onchange="updateVolume(this.value);">
   </div>
   </div>
+
+  <!-- Modal to add more time. -->
   <div class="modal fade" id="modalAddTime" tabindex="-1" role="dialog" aria-labelledby="modalAddTimeTitle" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -61,6 +65,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal when the timer reaches 0. -->
   <div class="modal fade" id="modalComplete" tabindex="-1" role="dialog" aria-labelledby="modalCompletedTitle" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -76,6 +82,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal for when we've reached a break point. -->
   <div class="modal fade" id="modalBreakTime" tabindex="-1" role="dialog" aria-labelledby="modalBreakTimeTitle" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
       <div class="modal-content">

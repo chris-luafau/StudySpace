@@ -17,6 +17,7 @@
       </div>
     </header>
 
+    <!-- Display the slider for the user to choose the length of the study session -->
     <main id="swup" class="transition-left">
       <form data-swup-form="form" id="slide-form" action="study-space.html" class="transition-left">
         <h4 class="sub-header">How <tag class="g-tag">long</tag>?</h4>
@@ -30,6 +31,8 @@
           <span class="span-right">5 hr.</span>
         </div>
         <br><br>
+
+      <!-- Display the slider for the user to choose when to have a break -->
         <h4 class="sub-header">Break <tag class="g-tag">intervals</tag>?</h4>
         <div class="timer-options">
           <input type="text" id="breakInput" value="Every 30 min." class="break-vals b-text">
@@ -41,10 +44,12 @@
         </div>
         <br><br>
         <div class="timer-options">
+          <!-- Back button -->
         <button class="btn btn-primary back-btn" type="button" onclick="history.back()" value="Back">Back
         <button type="submit" class="btn btn-primary sub-btn b-text">Next</button>
       </div>
       </form>
+      <!-- Home button -->
       <div class="container-timer-btns">
           <a class="btn btn-primary a-btn" href="index.html">Home</a>
       </div>
