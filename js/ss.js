@@ -13,6 +13,7 @@ $(document).ready(function () {
   });
 
   // For demo purposes, if time is set to the minimum value of 30 min, set timer to 20 seconds.
+  /*
   if (time === 30) {
     timer.start({
       countdown: true,
@@ -20,14 +21,14 @@ $(document).ready(function () {
         seconds: 20
       }
     });
-  } else {
+  } else {*/
     timer.start({
       countdown: true,
       startValues: {
         minutes: time
       }
     });
-  }
+  //}
 
   // Continuously update the timer while also checking to see if we reached a break time.
   $('#timer .values').html(timer.getTimeValues().toString());
