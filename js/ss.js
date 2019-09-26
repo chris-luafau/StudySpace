@@ -48,6 +48,7 @@ $(document).ready(function () {
 
     // For demo purposes, if the breakTime is set to the minimum value of 0,
     // assume breakTime is every 10 seconds.
+    /*
     if (timer.getTimeValues().seconds === 10 &&
         timer.getTimeValues().minutes === 0 &&
         timer.getTimeValues().hours === 0 &&
@@ -56,7 +57,7 @@ $(document).ready(function () {
           $('#modalBreakTime').modal();
           timer.pause();
           audioElem.pause();
-    }
+    }*/
   });
 
   // When the timer reaches 0, show the Completed modal and pause the audio.

@@ -97,3 +97,4 @@ function init () {
   new showContent();
 }
 document.addEventListener('swup:contentReplaced', init);
+$('#randomBtn').addEventListener('click', init);
