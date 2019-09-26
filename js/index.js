@@ -34,7 +34,7 @@ function randomStudySpace () {
 
 // INITIALIZE BACKSTRETCH
 $.backstretch([
-  // Change to assets/img/__img-name__ for local testing
+  // For local testing
   /*
   'assets/img/forest.jpg',
   'assets/img/city-skyline-at-night.jpg',
