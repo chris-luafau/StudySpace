@@ -34,7 +34,8 @@ function randomStudySpace () {
 
 // INITIALIZE BACKSTRETCH
 $.backstretch([
-  '/StudySpace/assets/img/forest.jpg',
+  //'/StudySpace/assets/img/forest.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/forest.jpg',
   '/StudySpace/assets/img/city-skyline-at-night.jpg',
   '/StudySpace/assets/img/NatGeo07.jpg',
   '/StudySpace/assets/img/big-ben-bridge.jpg',
