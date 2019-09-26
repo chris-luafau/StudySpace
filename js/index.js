@@ -29,12 +29,21 @@ function randomStudySpace () {
   var alt = alts[Math.floor(Math.random() * alts.length)];
 
   //return 'http://localhost:3000/set-timer.html?alt=' + alt + '&space=' + space;
-  return 'http://chris-luafau.github.io/StudySpace/set-timer.html?alt=' + alt + '&space=' + space;
+  return 'https://chris-luafau.github.io/StudySpace/set-timer.html?alt=' + alt + '&space=' + space;
 }
 
 // INITIALIZE BACKSTRETCH
 $.backstretch([
   // Change to assets/img/__img-name__ for local testing
+  /*
+  'assets/img/forest.jpg',
+  'assets/img/city-skyline-at-night.jpg',
+  'assets/img/NatGeo07.jpg',
+  'assets/img/big-ben-bridge.jpg',
+  'assets/img/NatGeo03.jpg',
+  'assets/img/NatGeo12.jpg',
+  'assets/img/NatGeo15.jpg'
+  */
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/forest.jpg',
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/city-skyline-at-night.jpg',
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo07.jpg',
@@ -42,6 +51,7 @@ $.backstretch([
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo03.jpg',
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo12.jpg',
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo15.jpg'
+
 ], { duration: 3000, fade: 900 });
 $('.backstretch').css('opacity', 0.8);
 
@@ -52,6 +62,7 @@ const swup = new Swup(option);
 // RANDOM STUDY SPACE BUTTON
 $('#randomBtn').click(function () {
   document.getElementById('randomBtn').setAttribute('href', randomStudySpace());
+  console.log(document.getElementById('randomBtn'));
 });
 
 // UPDATE STUDY TIME ON THE SET-TIME.HTML
