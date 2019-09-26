@@ -68,14 +68,17 @@ function appendParams () {
 // When the user clicks the Home button, it will remove the study space and alternative parameters from the URL.
 function removeParams () {
   $('#home').submit(function () {
-    window.location.href = 'http://localhost:3000/index.html?';
+    //window.location.href = 'http://localhost:3000/index.html?';
+    window.location.href = 'http://chris-luafau.github.io/StudySpace';
   });
   $('#alt').submit(function () {
-    window.location.href = 'http://localhost:3000/index.html?';
+    //window.location.href = 'http://localhost:3000/index.html?';
+    window.location.href = 'http://chris-luafau.github.io/StudySpace';
   });
   $('#setTime').submit(function () {
     var space = getParameterByName('space');
-    window.location.href = 'http://localhost:3000/choose-alt.html?space=' + space;
+    //window.location.href = 'http://localhost:3000/choose-alt.html?space=' + space;
+    window.location.href = 'http://chris-luafau.github.io/StudySpace/choose-alt.html?space=' + space;
   });
 }
 

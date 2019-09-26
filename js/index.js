@@ -28,18 +28,19 @@ function randomStudySpace () {
 
   var alt = alts[Math.floor(Math.random() * alts.length)];
 
-  return 'http://localhost:3000/set-timer.html?alt=' + alt + '&space=' + space;
+  //return 'http://localhost:3000/set-timer.html?alt=' + alt + '&space=' + space;
+  return 'http://chris-luafau.github.io/StudySpace/set-timer.html?alt=' + alt + '&space=' + space;
 }
 
 // INITIALIZE BACKSTRETCH
 $.backstretch([
-  '../assets/img/forest.jpg',
-  '../assets/img/city-skyline-at-night.jpg',
-  '../assets/img/NatGeo07.jpg',
-  '../assets/img/big-ben-bridge.jpg',
-  '../assets/img/NatGeo03.jpg',
-  '../assets/img/NatGeo12.jpg',
-  '../assets/img/NatGeo15.jpg'
+  'StudySpace/assets/img/forest.jpg',
+  'StudySpace/assets/img/city-skyline-at-night.jpg',
+  'StudySpace/assets/img/NatGeo07.jpg',
+  'StudySpace/assets/img/big-ben-bridge.jpg',
+  'StudySpace/assets/img/NatGeo03.jpg',
+  'StudySpace/assets/img/NatGeo12.jpg',
+  'StudySpace/assets/img/NatGeo15.jpg'
 ], { duration: 3000, fade: 900 });
 $('.backstretch').css('opacity', 0.8);
 
