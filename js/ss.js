@@ -75,68 +75,68 @@ $(document).ready(function () {
   var audio = '#';
   if (space === 'Beach') {
     if (alt === 'Low-tide') {
-      // Remove 'StudySpace/' for local testing.
-      url = 'StudySpace/assets/video/beach-low.mp4';
-      audio = 'StudySpace/assets/audio/beach-ambience.mp3';
+      // Change to assets/audio(or video)/__file_name for local testing.
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/beach-low.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/beach-ambience.mp3';
     } else {
-      url = 'StudySpace/assets/video/beach-high.mp4';
-      audio = 'StudySpace/assets/audio/beach-ambience.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/beach-high.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/beach-ambience.mp3';
     }
   } else if (space === 'City') {
     if (alt === 'Day') {
-      url = 'StudySpace/assets/video/city-day.mp4';
-      audio = 'StudySpace/assets/audio/city-ambience.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/city-day.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/city-ambience.mp3';
     } else {
-      url = 'StudySpace/assets/video/city-night.mp4';
-      audio = 'StudySpace/assets/audio/city-ambience.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/city-night.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/city-ambience.mp3';
     }
   } else if (space === 'Forest') {
     if (alt === 'Creek') {
-      url = 'StudySpace/assets/video/forest-creek.mp4';
-      audio = 'StudySpace/assets/audio/forest-creek-ambience.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/forest-creek.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/forest-creek-ambience.mp3';
     } else {
-      url = 'StudySpace/assets/video/forest-waterfall.mp4';
-      audio = 'StudySpace/assets/audio/forest-waterfall-ambience.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/forest-waterfall.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/forest-waterfall-ambience.mp3';
     }
   } else if (space === 'Rain') {
     if (alt === 'Light') {
-      url = 'StudySpace/assets/video/rain-light.mp4';
-      audio = 'StudySpace/assets/audio/rain-light.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/rain-light.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/rain-light.mp3';
     } else {
-      url = 'StudySpace/assets/video/rain-heavy.mp4';
-      audio = 'StudySpace/assets/audio/rain-heavy.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/rain-heavy.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/rain-heavy.mp3';
     }
   } else if (space === 'Library') {
     if (alt === 'FirstFloor') {
-      url = 'StudySpace/assets/video/library-1st-floor.mp4';
-      audio = 'StudySpace/assets/audio/library-1st-floor.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/library-1st-floor.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/library-1st-floor.mp3';
     } else {
-      url = 'StudySpace/assets/video/library-3rd-floor.mp4';
-      audio = 'StudySpace/assets/audio/library-3rd-floor.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/library-3rd-floor.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/library-3rd-floor.mp3';
     }
   } else if (space === 'Cafe') {
     if (alt === 'Paris') {
-      url = 'StudySpace/assets/video/cafe-paris.mp4';
-      audio = 'StudySpace/assets/audio/cafe-paris.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/cafe-paris.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/cafe-paris.mp3';
     } else {
-      url = 'StudySpace/assets/video/cafe-newyork.mp4';
-      audio = 'StudySpace/assets/audio/cafe-newyork.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/cafe-newyork.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/cafe-newyork.mp3';
     }
   } else if (space === 'Park') {
     if (alt === 'Spring') {
-      url = 'StudySpace/assets/video/park-spring.mp4';
-      audio = 'StudySpace/assets/audio/park-spring.wav';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/park-spring.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/park-spring.wav';
     } else {
-      url = 'StudySpace/assets/video/park-fall.mp4';
-      audio = 'StudySpace/assets/audio/park-fall.wav';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/park-fall.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/park-fall.wav';
     }
   } else if (space === 'Mountains') {
     if (alt === 'LowAltitude') {
-      url = 'StudySpace/assets/video/mountain-low-alt.mp4';
-      audio = 'StudySpace/assets/audio/mountain-low-alt.mp3';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/mountain-low-alt.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/mountain-low-alt.mp3';
     } else {
-      url = 'StudySpace/assets/video/mountain-high-alt.mp4';
-      audio = 'StudySpace/assets/audio/mountain-high-alt.wav';
+      url = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/video/mountain-high-alt.mp4';
+      audio = 'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/audio/mountain-high-alt.wav';
     }
   }
 

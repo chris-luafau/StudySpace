@@ -34,14 +34,14 @@ function randomStudySpace () {
 
 // INITIALIZE BACKSTRETCH
 $.backstretch([
-  //'/StudySpace/assets/img/forest.jpg',
+  // Change to assets/img/__img-name__ for local testing
   'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/forest.jpg',
-  '/StudySpace/assets/img/city-skyline-at-night.jpg',
-  '/StudySpace/assets/img/NatGeo07.jpg',
-  '/StudySpace/assets/img/big-ben-bridge.jpg',
-  '/StudySpace/assets/img/NatGeo03.jpg',
-  '/StudySpace/assets/img/NatGeo12.jpg',
-  '/StudySpace/assets/img/NatGeo15.jpg'
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/city-skyline-at-night.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo07.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/big-ben-bridge.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo03.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo12.jpg',
+  'https://media.githubusercontent.com/media/chris-luafau/StudySpace/master/assets/img/NatGeo15.jpg'
 ], { duration: 3000, fade: 900 });
 $('.backstretch').css('opacity', 0.8);
 
