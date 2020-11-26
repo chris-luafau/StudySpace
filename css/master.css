@@ -223,12 +223,11 @@ a:hover {
 }
 
 .sub-btn {
-  display: flex;
+  display: inline-block;
   background: #40e080;
   background: rgba(0, 0, 0, 0);
   color: white;
   border-radius: 80%;
-  padding-left: 1.35em;
   height: 100px;
   width: 100px;
 }
